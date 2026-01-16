@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>要旨から自動レポート生成</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>要旨からレポートを自動生成</h1>
+        <p>要旨を入力するだけで、レポートのたたきを作成します。</p>
+      </header>
+
+      <section class="input-panel">
+        <label for="abstract" class="input-panel__label">要旨（200〜600文字推奨）</label>
+        <textarea id="abstract" class="input-panel__textarea" placeholder="例：本研究では◯◯について調査し、△△の効果を検証した。…"></textarea>
+        <div class="input-panel__actions">
+          <button id="generate" class="button button--primary">レポートを生成</button>
+          <button id="clear" class="button button--ghost">クリア</button>
+        </div>
+      </section>
+
+      <section class="output-panel">
+        <div class="output-panel__header">
+          <h2>生成されたレポート</h2>
+          <div class="output-panel__actions">
+            <button id="copy" class="button button--secondary" disabled>コピー</button>
+            <button id="download" class="button button--secondary" disabled>Markdownで保存</button>
+          </div>
+        </div>
+        <pre id="report" class="output-panel__content" aria-live="polite"></pre>
+        <p id="hint" class="output-panel__hint">要旨を入力して「レポートを生成」を押してください。</p>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>※ 生成された内容はドラフトです。必ず内容を確認・修正してください。</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
